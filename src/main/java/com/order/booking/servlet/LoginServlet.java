@@ -1,4 +1,4 @@
-package com.order.booking;
+package com.order.booking.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
