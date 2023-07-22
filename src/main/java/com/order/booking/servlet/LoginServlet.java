@@ -2,7 +2,6 @@ package com.order.booking.servlet;
 
 import com.order.booking.entity.User;
 import com.order.booking.service.UserService;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,12 +26,17 @@ public class LoginServlet extends HttpServlet {
         resp.setContentType("text/html");
         try {
             User user = userService.login(username,password);
-            if(user != null){
+            if(user != null)
+            {
                 resp.getWriter().write("Thanks for login !<br/> <h3>Your user details is :" + user.toString() + "</h3>");
-            }else{
+            }
+            else
+            {
                 resp.getWriter().write("<h3>Invalid username/password</h3>");
             }
-        }catch (Exception exception){
+        }
+        catch (Exception exception)
+        {
             resp.getWriter().write("<h3>Something went wrong:: "+exception.getMessage()+"</h3>");
         }
 

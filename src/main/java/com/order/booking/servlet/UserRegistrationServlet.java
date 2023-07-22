@@ -15,8 +15,8 @@ import java.util.Date;
 
 @WebServlet(name = "UserRegistration", urlPatterns = "/userRegistration")
 public class UserRegistrationServlet extends HttpServlet {
-private static int id = 1;
-private UserService userService=new UserService();
+    private static int id = 1;
+    private UserService userService = new UserService();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,15 +32,16 @@ private UserService userService=new UserService();
         user.setPassword(password);
         resp.setContentType("text/html");
         try {
-           String result= userService.save(user);
-            resp.getWriter().write(" <h3>Your registration status is:" +result + "<br/><a href=\"index.html\">Login</a></h3>");
+            String result = userService.save(user);
+            resp.getWriter().write(" <h3>Your registration status is:" + result + "<br/><a href=\"index.html\">Login</a></h3>");
         } catch (Exception e) {
             e.printStackTrace();
             resp.getWriter().write("<h3>Invalid username/password</h3>");
         }
     }
-    private Integer getId(){
+
+    private Integer getId() {
         LocalDateTime time = LocalDateTime.now();
-        return time.getYear()+time.getMonthValue()+time.getDayOfMonth()+time.getHour()+time.getMinute()+time.getSecond()+time.getNano()+(id++);
+        return time.getYear() + time.getMonthValue() + time.getDayOfMonth() + time.getHour() + time.getMinute() + time.getSecond() + time.getNano() + (id++);
     }
 }
