@@ -3,6 +3,7 @@ package com.order.booking.servlet;
 import com.order.booking.entity.Customer;
 import com.order.booking.entity.User;
 import com.order.booking.service.CustomerService;
+import com.order.booking.util.UniqueID;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +36,7 @@ public class CustomerRegistrationServlet extends HttpServlet {
       long myPhone =phone != null && !phone.isEmpty()?Long.parseLong(phone):0;
 
         Customer customer = new Customer();
-        customer.setId(getId());
+        customer.setId(UniqueID.getNextId());
         customer.setFirstName(firstname);
         customer.setLastName(lastname);
         customer.setEmail(email);
@@ -58,11 +59,5 @@ public class CustomerRegistrationServlet extends HttpServlet {
             e.printStackTrace();
             resp.getWriter().write("<h3>Invalid email/password</h3>");
         }
-    }
-
-    private Integer getId()
-    {
-        LocalDateTime time = LocalDateTime.now();
-        return time.getYear() + time.getMonthValue() + time.getDayOfMonth() + time.getHour() + time.getMinute() + time.getSecond() + time.getNano() + (id++);
     }
 }
