@@ -1,22 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Registration Page</title>
+    <meta charset="UTF-8">
+    <title>User Sign Up form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+            integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.7.0.min.js">
+    </script>
+    <script src="js/bootstrap.bundle.min.js">
+
+    </script>
+    <script src="js/popper.min.js">
+
+    </script>
+    <script src="js/bootstrap.min.js">
+    </script>
 </head>
 <body>
-<h2>Registration Page</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-4 col-md-6 offset-md-3 col-sm-12 col-xs-12">
+            <form method="post" action="signup">
+                <div class="card mt-5">
+                    <div class="card-heading text-center bg-navi">
+                        <div class="d-flex flex-row justify-content-center p-2">
+                            <div class="p-0"><i class="fa fa-user text-white user-font"></i></div>
+                            <div class="pl-2" style="padding-left:11px"><h6 class="text-info" style="line-height:30px">
+                                User Sign Up</h6></div>
+                        </div>
 
-<form action="RegistrationServlet" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br><br>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3 mt-3">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Enter Your First Name"
+                                   name="firstName">
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Enter Your Last Name"
+                                   name="lastName">
 
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="phone">Phone:</label>
+                            <input type="phone" class="form-control" id="phone" placeholder="Enter Your Phone Number"
+                                   name="phone">
 
-    <input type="submit" value="Register">
-</form>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control" id="email" placeholder="Enter Your E-Mail Address"
+                                   name="email">
+
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter Your Password"
+                                   name="password">
+
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirmPassword"
+                                   placeholder="Re-Enter Your Password"
+                                   name="confirmPassword">
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                        <div class="col-11" style="text-align:center">
+                            <a href="user_registration.html" class="btn btn-sm bg-btn">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                Sign Up
+                                </button>
+                            </a>
+                        </div>
+            </form>
+        </div>
+    </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
