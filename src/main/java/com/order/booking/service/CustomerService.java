@@ -11,9 +11,9 @@ public class CustomerService {
         {
             customerDao = new CustomerDao();
         }
-        public Customer login(String email, String password) throws SQLException
+        public Customer login(String username, String password) throws SQLException
         {
-            return customerDao.login(email,password);
+            return customerDao.login(username,password);
         }
 
         public String save(Customer customer) throws SQLException

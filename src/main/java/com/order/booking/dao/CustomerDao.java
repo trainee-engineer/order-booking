@@ -23,13 +23,14 @@ import java.sql.SQLException;
             }
         }
 
-        public Customer login(String email, String password) throws SQLException
+        public Customer login(String username, String password) throws SQLException
         {
             Connection conn = databaseUtils.getConnection();
             try
             {
-                PreparedStatement statement = conn.prepareStatement("select * from customer where email=? and password=?");
-                statement.setString(1, email);
+                //update customer set password=? where email=?
+                PreparedStatement statement = conn.prepareStatement("select * from customer where username=? and password=?");
+                statement.setString(1, username);
                 statement.setString(2, password);
 
 
@@ -42,8 +43,9 @@ import java.sql.SQLException;
                     customer.setFirstName(rs.getString(2));
                     customer.setLastName(rs.getString(3));
                     customer.setPhone(rs.getLong(4));
-                    customer.setPassword(rs.getString(5));
-                    customer.setConfirmPassword(rs.getString(6));
+                    customer.setUsername(rs.getString(5));
+                    customer.setPassword(rs.getString(6));
+                    customer.setConfirmPassword(rs.getString(7));
                     if (password.equals(customer.getPassword()))
                     {
                         return customer;
@@ -76,9 +78,9 @@ import java.sql.SQLException;
                 stat.setString(2, customer.getFirstName());
                 stat.setString(3, customer.getLastName());
                 stat.setLong(4, customer.getPhone());
-                stat.setString(5, customer.getEmail());
+                stat.setString(5, customer.getUsername());
                 stat.setString(6, customer.getPassword());
-//                stat.setString(7, customer.getConfirmPassword());
+                stat.setString(7, customer.getConfirmPassword());
                 boolean isInserted = stat.execute();
                 conn.setAutoCommit(true);
                 if (!isInserted)

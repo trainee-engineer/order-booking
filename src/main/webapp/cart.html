@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Your Shopping Cart</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Loop through items in the cart using Java Servlet -->
+
+    <!--Get cart data from servlet and loop through it-->
+    <tr>
+      <img src="assets/cricket-bat_1.png" class="Image"/>
+      <td>Bat</td>
+      <td>$20.00</td>
+      <td>
+        <input type="number" value="1" min="0">
+      </td>
+      <td>$20.00</td>
+      <td>
+        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-success">Proceed</button>
+        <button class="btn btn-#008CBA">Back</button>
+        <button class="btn btn-#008CBA">Next</button>
+
+      </td>
+    </tr>
+    <!-- Repeat similar structure for other items in the cart -->
+    </tbody>
+  </table>
+  <h3>Total: $<!-- Calculate total price using Java Servlet --></h3>
+
+</div>
+</body>
+</html>

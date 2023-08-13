@@ -1,5 +1,5 @@
 .bg-navi{
-background-color:#098AA6;
+background-color:#dc3545;
 }
 .order-booking-link{
 color: white !important;
@@ -12,9 +12,12 @@ height:66px;
 font-size:30px
 }
 .bg-btn{
-background-color:#053645;
+background-color:#29b437db;
 color:white;
 }
 .bg-btn:hover{
 color:white;
+}
+.text-my-white{
+color:#eaf3f4;
 }

@@ -4,7 +4,6 @@ import com.order.booking.entity.Customer;
 import com.order.booking.entity.User;
 import com.order.booking.service.CustomerService;
 import com.order.booking.util.UniqueID;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,15 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-@WebServlet(name = "CustomerRegistrationServlet", urlPatterns = "/CustomerRegistrationServlet")
+@WebServlet(name = "CustomerRegistration", urlPatterns = "/CustomerSignup")
 public class CustomerRegistrationServlet extends HttpServlet {
     private static int id = 1;
-
-
-
-
-
-
     private CustomerService customerService = new CustomerService();
 
     @Override
@@ -29,33 +22,36 @@ public class CustomerRegistrationServlet extends HttpServlet {
         String firstname = req.getParameter("firstName");
         String lastname = req.getParameter("lastName");
         String phone = req.getParameter("phone");
-        String email = req.getParameter("email");
+        String username = req.getParameter("username");
         String password = req.getParameter("password");
-        String confirmPassword = req.getParameter("confirmPassword");
+        String confirmpassword = req.getParameter("confirmPassword");
 
-      long myPhone =phone != null && !phone.isEmpty()?Long.parseLong(phone):0;
+        long myPhone = phone != null && !phone.isEmpty() ? Long.parseLong(phone) : 0;
 
         Customer customer = new Customer();
         customer.setId(UniqueID.getNextId());
         customer.setFirstName(firstname);
         customer.setLastName(lastname);
-        customer.setEmail(email);
-        customer.setPassword(password);
         customer.setPhone(myPhone);
-        customer.setConfirmPassword(confirmPassword);
+        customer.setUsername(username);
+        customer.setPassword(password);
+        customer.setConfirmPassword(confirmpassword);
         resp.setContentType("text/html");
 
-        try {
-            if(confirmPassword.equals(password)){
-                String result = customerService.save(customer);
-                resp.getWriter().write(" <h3>Your registration status is:" + result + "<br/><a href=\"index1.html\">Login</a></h3>");
-            }else{
-                resp.getWriter().write(" <h3>Password does not match with confirm password, please try again<br/>" +
-                        "<a href=\"customer_registration.html\">Try Again</a></h3>");
-            }
-        }
-        catch (Exception e)
+        try
         {
+            if (confirmpassword.equals(password))
+            {
+                String result = customerService.save(customer);
+                resp.sendRedirect("customer_reg_successfully.html");
+                resp.getWriter().write(" <h3>Your registration status is:" + result + "<br/><a href=\"index1.html\">Login</a></h3>");
+            }
+            else
+            {
+                resp.getWriter().write(" <h3>Password does not match with confirm password, please try again<br/>" +
+                        "<a href=\"customer_reg.html\">Try Again</a></h3>");
+            }
+        } catch (Exception e) {
             e.printStackTrace();
             resp.getWriter().write("<h3>Invalid email/password</h3>");
         }

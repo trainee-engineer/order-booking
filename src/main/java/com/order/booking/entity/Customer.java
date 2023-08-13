@@ -5,32 +5,38 @@ public class Customer {
     private String firstName;
     private String lastName;
     private Long phone;
-    private String email;
+    private String username;
     private String password;
 
     private String confirmPassword;
 
     public int getId() {
+
         return id;
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public String getFirstName() {
+
         return firstName;
     }
 
     public void setFirstName(String firstName) {
+
         this.firstName = firstName;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
     public void setLastName(String lastName) {
+
         this.lastName = lastName;
     }
 
@@ -42,15 +48,18 @@ public class Customer {
         this.phone = phone;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+
+        this.username = username;
     }
 
     public String getPassword() {
+
         return password;
     }
 
@@ -74,7 +83,7 @@ public class Customer {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ",Phone ='" + phone + '\'' +
-                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 "confirmPassword='" + confirmPassword + '\'' +
                 '}';

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "customer login", urlPatterns = "/customer login")
+@WebServlet(name = "Customer Login", urlPatterns = "/CustomerLogin")
 public class CustomerLoginServlet extends HttpServlet {
     private CustomerService customerService;
 
