@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(value = "/shopping-cart",urlPatterns = "cart")
+@WebServlet(name = "Shopping Cart",urlPatterns = "/cart")
 public class ShoppingCartServlet extends HttpServlet {
     private List<Item> cartItems = new ArrayList<>();
 

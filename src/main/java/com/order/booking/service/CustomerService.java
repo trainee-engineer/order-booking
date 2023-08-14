@@ -2,10 +2,10 @@ package com.order.booking.service;
 
 import com.order.booking.dao.CustomerDao;
 import com.order.booking.entity.Customer;
-
 import java.sql.SQLException;
 
-public class CustomerService {
+public class CustomerService
+{
         private CustomerDao customerDao;
     public CustomerService()
         {
@@ -15,7 +15,6 @@ public class CustomerService {
         {
             return customerDao.login(username,password);
         }
-
         public String save(Customer customer) throws SQLException
         {
             return customerDao.save(customer);

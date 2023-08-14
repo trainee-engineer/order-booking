@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-@WebServlet(name = "CustomerRegistration", urlPatterns = "/CustomerSignup")
+@WebServlet(name = "CustomerRegistration", urlPatterns = "/customer_signup")
 public class CustomerRegistrationServlet extends HttpServlet {
     private static int id = 1;
     private CustomerService customerService = new CustomerService();
@@ -44,16 +44,16 @@ public class CustomerRegistrationServlet extends HttpServlet {
             {
                 String result = customerService.save(customer);
                 resp.sendRedirect("customer_reg_successfully.html");
-                resp.getWriter().write(" <h3>Your registration status is:" + result + "<br/><a href=\"index1.html\">Login</a></h3>");
+                resp.getWriter().write(" <h3>Your registration status is:" + result + "<br/><a href=\"customer_login.html\">Login</a></h3>");
             }
             else
             {
                 resp.getWriter().write(" <h3>Password does not match with confirm password, please try again<br/>" +
-                        "<a href=\"customer_reg.html\">Try Again</a></h3>");
+                        "<a href=\"customer_registration.html\">Try Again</a></h3>");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            resp.getWriter().write("<h3>Invalid email/password</h3>");
+            resp.getWriter().write("<h3>Invalid username/password</h3>");
         }
     }
 }

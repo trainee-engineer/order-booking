@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "Customer Login", urlPatterns = "/CustomerLogin")
+@WebServlet(name = "Customer Login", urlPatterns = "/customer_login")
 public class CustomerLoginServlet extends HttpServlet {
     private CustomerService customerService;
 
@@ -22,18 +22,18 @@ public class CustomerLoginServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
-        String email = req.getParameter("email");
+        String username = req.getParameter("username");
         String password = req.getParameter("password");
         resp.setContentType("text/html");
         try
         {
-            Customer customer = customerService.login(email, password );
+            Customer customer = customerService.login(username, password );
             if (customer != null) {
                 resp.getWriter().write("Thanks for login !<br/> <h3>Your user details is :" + customer.toString() + "</h3>");
             }
             else
             {
-                resp.getWriter().write("<h3>Invalid email/password</h3>");
+                resp.getWriter().write("<h3>Invalid username/password</h3>");
             }
         }
         catch (Exception exception)
