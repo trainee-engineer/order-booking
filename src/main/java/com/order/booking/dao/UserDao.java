@@ -9,18 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 public class UserDao
 {
-    private DatabaseUtils databaseUtils;
-    public UserDao()
-    {
-        try
-        {
-            databaseUtils = new DatabaseUtils();
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-    }
+    private DatabaseUtils databaseUtils=DatabaseUtils.getInstance();
     public User login(String username, String password) throws SQLException
     {
         Connection conn = databaseUtils.getConnection();

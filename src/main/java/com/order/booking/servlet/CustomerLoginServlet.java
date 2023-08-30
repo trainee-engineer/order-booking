@@ -29,7 +29,7 @@ public class CustomerLoginServlet extends HttpServlet {
         {
             Customer customer = customerService.login(username, password );
             if (customer != null) {
-                resp.getWriter().write("Thanks for login !<br/> <h3>Your user details is :" + customer.toString() + "</h3>");
+                resp.sendRedirect("index.html");
             }
             else
             {

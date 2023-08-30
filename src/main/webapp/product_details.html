@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail Form</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <style>
+  body
+  {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  .container
+  {
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .form-group
+  {
+    margin-bottom: 20px;
+  }
+  label
+  {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  input
+  {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button
+  {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .shopping-images
+  {
+width: 250px;
+height: 250px;
+}
+.product-price
+{
+    font-size: 2.1rem;
+    color: #c0392b;
+    margin-bottom: 20px;
+  }
+.buy-button
+{
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #d97609;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+.bg-orange{
+ background-color: #d97609;
+}
+  .buy-button:hover
+  {
+    background-color: #0056b3;
+  }
+  .size-dropdown
+  {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16"><path d="M3.177 5.635a.5.5 0 0 1 .646 0L8 9.177l4.177-3.542a.5.5 0 1 1 .646.768l-4.5 3.81a.5.5 0 0 1-.646 0l-4.5-3.81a.5.5 0 0 1 0-.768z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 12px;
+    cursor: pointer;
+  }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Brand</h1>
+    <form>
+        <div class="form-group">
+           <a href="https://www.w3schools.com/bootstrap5/bootstrap_forms.php">
+               <img src="assets/Men's-casual-shirt-peter-england.jpg" class="shopping-images"/>
+           </a>
+            <a href="https://www.codewithrandom.com/2023/02/22/css-3d-text-effects/">
+                <p class="product-price">Rs.2999</p>
+            </a>
+        </div>
+        <select class="form-control">
+            <option value="" disabled selected>Select size</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+        </select>
+        <label for="product-name">Product Name</label>
+        <input type="text" id="product-name" name="product-name" required>
+        <div class="form-group">
+            <label for="product-description">Description</label>
+            <textarea id="product-description" name="product-description" rows="4" required></textarea>
+        </div>
+        <button class="buy-button">Buy Now</button>
+        <button class="btn btn-sm bg-orange">Orange</button>
+    </form>
+</div>
+</body>
+</html>

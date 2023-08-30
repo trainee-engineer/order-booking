@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+  body
+  {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .payment-container
+  {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+  }
+  .payment-method
+  {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .payment-method label
+  {
+    flex: 1;
+  }
+  .payment-method input[type="radio"]
+  {
+    margin-right: 10px;
+  }
+  .payment-submit
+  {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .payment-submit button
+  {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+    </style>
+    <title>Payment Form</title>
+</head>
+<body>
+<div class="payment-container">
+    <h2>Select a Payment Method</h2>
+    <form>
+        <div class="payment-method">
+            <input type="radio" name="paymentMethod" id="creditCard" value="creditCard" checked>
+            <label for="creditCard">
+                Credit Card/Debit Card
+            </label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" name="paymentMethod" id="netBanking" value="netBanking">
+            <label for="netBanking">
+                Net Banking
+            </label>
+        </div>
+        <div class="payment-method">
+            <input type="radio" name="paymentMethod" id="cashOnDelivery" value="cashOnDelivery" checked>
+            <label for="cashOnDelivery">
+                Cash on Delivery
+            </label>
+        </div>
+        <div class="payment-submit">
+            <button type="submit">
+                Proceed to Payment
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

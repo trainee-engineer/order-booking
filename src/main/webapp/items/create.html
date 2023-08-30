@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Item</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+            integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="items.css">
+    <script src="../js/jquery-3.7.0.min.js">
+
+    </script>
+    <script src="../js/bootstrap.bundle.min.js">
+    </script>
+    <script src="../js/popper.min.js">
+    </script>
+    <script src="../js/bootstrap.min.js">
+    </script>
+    <style>
+
+  h1 {
+    text-align: center;
+  }
+   label {
+    display: block;
+    font: bold;
+    margin-bottom: 5px;
+  }
+ input[type="text"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+     select {
+    height: 40px;
+  }
+   textarea {
+    height: 100px;
+  }
+   button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+   button:hover {
+    background-color: #0056b3;
+  }
+    </style>
+</head>
+<body>
+<div class="container-fluid" style="background:#dcdcdc">
+    <div class="container">
+        <h5 class="text-center page-heading text-success">Add Item In Stock</h5>
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between">
+                    <a href="list.html" class="btn btn-default bg-info"><i class="fa fa-table"></i>  Back To Item
+                        Stock</a>
+                </div>
+            </div>
+            <div class="container">
+                <h1>Add Item</h1>
+                <form action="AddItemServlet" method="post">
+                    <label for="itemId">Item ID:</label>
+                    <input type="text" id="itemId" name="itemId" required>
+
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" name="itemName" required>
+
+                    <label for="quantity">Quantity:</label>
+                    <select id="quantity" name="quantity" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <!-- Add more options as needed -->
+                    </select>
+
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" step="0.01" required>
+
+                    <label for="imageUrl">Image URL:</label>
+                    <input type="text" id="imageUrl" name="imageUrl" required>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+
+                    <button type="submit">Add Item</button>
+                </form>
+            </div>
+            <div class="card-footer"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

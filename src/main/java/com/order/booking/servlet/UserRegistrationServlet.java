@@ -38,7 +38,9 @@ public class UserRegistrationServlet extends HttpServlet
         try {
             String result = userService.save(user);
             resp.sendRedirect("user_reg_successfully.html");
-            //resp.getWriter().write(" <h3>Your registration status is:" + result + "<br/><a href=\"index.html\">Login</a></h3>");
+            //resp.getWriter().write(" <h3>Your registration status is:" + result + "<br/>
+            // <a href=\"index.html\">Login</a>
+            // </h3>");
         }
         catch (Exception e)
         {

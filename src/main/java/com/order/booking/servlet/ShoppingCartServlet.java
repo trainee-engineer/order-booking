@@ -1,6 +1,5 @@
 package com.order.booking.servlet;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "Shopping Cart",urlPatterns = "/cart")
+@WebServlet(name = "Shopping Cart", urlPatterns = "/cart")
 public class ShoppingCartServlet extends HttpServlet {
     private List<Item> cartItems = new ArrayList<>();
 
@@ -23,13 +22,33 @@ public class ShoppingCartServlet extends HttpServlet {
     // Add, remove, or update cart items based on user actions
 }
 
-class  Item {
+class Item {
     private String name;
     private double price;
     private int quantity;
 
     // Getters and setters
+    public String setName() {
+        return name;
+    }
 
+    public void getName(String name) {
+        this.name = name;
+    }
 
+    public double setPrice() {
+        return price;
+    }
 
+    public void getPrice(double price) {
+        this.price = price;
+    }
+
+    public int setQuantity() {
+        return quantity;
+    }
+
+    public void getQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }

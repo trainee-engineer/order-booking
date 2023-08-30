@@ -34,5 +34,3 @@ public class ForgotPasswordServlet extends HttpServlet
     }
 
 }
-
-

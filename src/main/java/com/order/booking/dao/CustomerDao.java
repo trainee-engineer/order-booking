@@ -9,19 +9,8 @@ import java.sql.SQLException;
 
     public class CustomerDao
     {
-        private DatabaseUtils databaseUtils;
+        private DatabaseUtils databaseUtils = DatabaseUtils.getInstance();
 
-        public CustomerDao()
-        {
-            try
-            {
-                databaseUtils = new DatabaseUtils();
-            }
-            catch (ClassNotFoundException e)
-            {
-                e.printStackTrace();
-            }
-        }
 
         public Customer login(String username, String password) throws SQLException
         {
@@ -45,7 +34,6 @@ import java.sql.SQLException;
                     customer.setPhone(rs.getLong(4));
                     customer.setUsername(rs.getString(5));
                     customer.setPassword(rs.getString(6));
-                    customer.setConfirmPassword(rs.getString(7));
                     if (password.equals(customer.getPassword()))
                     {
                         return customer;
@@ -80,7 +68,6 @@ import java.sql.SQLException;
                 stat.setLong(4, customer.getPhone());
                 stat.setString(5, customer.getUsername());
                 stat.setString(6, customer.getPassword());
-                stat.setString(7, customer.getConfirmPassword());
                 boolean isInserted = stat.execute();
                 conn.setAutoCommit(true);
                 if (!isInserted)
